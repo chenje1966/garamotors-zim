@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gara Motors</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #0f172a;
+        color: white;
+    }
+
+    header {
+        text-align: center;
+        padding: 30px 20px;
+        background: linear-gradient(135deg, #111827, #1f2937);
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #22c55e;
+    }
+
+    nav {
+        background: #0b1220;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 12px;
+    }
+
+    nav a {
+        color: #cbd5e1;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color: #22c55e;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        color: #94a3b8;
+        max-width: 650px;
+        margin: auto;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 20px;
+        background: #22c55e;
+        color: black;
+        font-weight: bold;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+    }
+
+    section {
+        max-width: 900px;
+        margin: auto;
+        padding: 40px 20px;
+    }
+
+    h2 {
+        color: #22c55e;
+        margin-bottom: 15px;
+    }
+
+    .card {
+        background: #111827;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #0b1220;
+        color: #64748b;
+    }
+
+    .whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25D366;
+        color: white;
+        padding: 15px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">GARA MOTORS</div>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#booking">Book</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <h1>Cars is our business. We fix them at a professional level.</h1>
+
+    <p>
+        We provide high-quality car repairs, diagnostics, servicing, and mechanical solutions
+        with professional workmanship and reliable service.
+    </p>
+
+    <a class="btn" href="#booking">Book a Repair</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <div class="card">
+        Gara Motors is a professional workshop dedicated to fixing vehicles with precision,
+        care, and expert mechanical skills.
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="card">
+        <ul>
+            <li>Car Repairs</li>
+            <li>Engine Diagnostics</li>
+            <li>Dent Removal</li>
+            <li>Oil Change & Servicing</li>
+            <li>Brake Repairs</li>
+        </ul>
+    </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+    <h2>Book a Repair</h2>
+    <div class="card">
+        <form onsubmit="sendWhatsApp(); return false;">
+            <input type="text" id="name" placeholder="Your Name" required><br><br>
+            <input type="tel" id="phone" placeholder="Your Phone Number" required><br><br>
+
+            <select id="service">
+                <option>Car Repair</option>
+                <option>Engine Diagnostics</option>
+                <option>Servicing</option>
+                <option>Dent Removal</option>
+            </select><br><br>
+
+            <textarea id="message" rows="4" placeholder="Describe your issue"></textarea><br><br>
+
+            <button class="btn" type="submit">Submit Booking</button>
+        </form>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+        <p>📞 0772261455</p>
+        <p>📍 Harare, Zimbabwe</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Gara Motors
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/263772261455" target="_blank">
+    WhatsApp
+</a>
+
+<script>
+function sendWhatsApp() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let service = document.getElementById("service").value;
+    let message = document.getElementById("message").value;
+
+    let url = "https://wa.me/263772261455?text="
+        + "Booking from Gara Motors:%0A"
+        + "Name: " + name + "%0A"
+        + "Phone: " + phone + "%0A"
+        + "Service: " + service + "%0A"
+        + "Message: " + message;
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
